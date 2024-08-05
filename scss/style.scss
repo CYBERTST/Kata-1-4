@@ -1,0 +1,414 @@
+/* позиционирование контента внутри кнопок */
+%menu-button-position {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+button {
+  padding: 0;
+  font-family: "TT Lakes", sans-serif;
+}
+@font-face {
+  font-family: "TT Lakes";
+  src: local("Lexend Peta Regular"), local("LexendPeta-Regular"),
+    url("../fonts/TTLakes-Regular.woff") format("woff"),
+    url(../fonts/TTLakes-Regular.ttf) format("ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "TT Lakes bold";
+  src: local("Lexend Peta Regular"), local("LexendPeta-Regular"),
+    url("../fonts/TTLakes-ExtraBold.woff") format("woff"),
+    url(../fonts/TTLakes-ExtraBold.ttf) format("ttf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "TT Lakes medium";
+  src: local("Lexend Peta Regular"), local("LexendPeta-Regular"),
+    url("../fonts/TTLakes-Medium.woff") format("woff"),
+    url(../fonts/TTLakes-Medium.ttf) format("ttf");
+  font-weight: 500;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  font-family: "TT Lakes", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "TT Lakes bold", sans-serif;
+  margin: 0;
+  padding: 0;
+  letter-spacing: -0.6px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+}
+.contain__btn {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.header-button {
+  position: relative;
+  display: flex;
+  border: none;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: inherit;
+}
+/* Кнопки в меню, стилизация */
+.menu-button {
+  background-color: #ff3e79;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+/* Кнопки в мейне, стилизация */
+.main-button {
+  font-family: "TT Lakes medium", sans-serif;
+  display: inline-block;
+  padding: 8px 16px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  color: #7e7e82;
+  border-color: #b8ffec;
+  cursor: pointer;
+  background-color: inherit;
+  border: 2px solid transparent;
+}
+
+.main__button-section {
+  display: flex;
+}
+
+.main-button:hover {
+  border: 2px solid #b8ffec;
+  background-color: #ffffff;
+}
+
+/* Контент кнопок */
+
+.menu-button__icon-close {
+  background-image: url(../ic/icon-close.svg);
+  @extend %menu-button-position;
+}
+.menu-button__icon-burger {
+  background-image: url(../ic/icon-burger.svg);
+  @extend %menu-button-position;
+}
+
+.menu-button__icon-tools {
+  background-image: url(../ic/icon-tools.svg);
+  @extend %menu-button-position;
+}
+
+.menu-button__icon-search {
+  background-image: url(../ic/icon-search.svg);
+  @extend %menu-button-position;
+}
+
+.menu-button__icon-search2 {
+  background-image: url(../ic/icon-search2.svg);
+  @extend %menu-button-position;
+}
+
+.menu-button__icon-phone {
+  background-image: url(../ic/icon-phone.svg);
+  @extend %menu-button-position;
+}
+
+.menu-button__icon-chat {
+  background-image: url(../ic/icon-chat.svg);
+  @extend %menu-button-position;
+}
+
+.menu-button__icon-contact {
+  background-image: url(../ic/icon-contact.svg);
+  @extend %menu-button-position;
+}
+
+/* Блоки кнопок для псевдоэлементов и отображения на разных разрешениях(ширине) */
+.menu__button-group {
+  position: relative;
+  display: flex;
+  gap: 16px;
+}
+.menu__button-group::before {
+  content: "";
+  background-color: #eaeaea;
+  border-radius: 1px;
+  position: absolute;
+  width: 2px;
+  height: 32px;
+  top: 4px;
+  left: -20px;
+}
+
+.menu-tablet--display,
+.desktop-button--display,
+.text__tablet--display,
+.text__desktop--display {
+  display: none;
+}
+
+.main-title {
+  position: relative;
+  display: flex;
+}
+
+.navigation__item a {
+  position: relative;
+}
+
+.main__title {
+  margin-bottom: 24px;
+}
+
+.main-title::before,
+.navigation__item a:hover::before {
+  content: "";
+  display: block;
+  background-color: #41f6d7;
+  border-radius: 4px;
+  position: absolute;
+  width: 4px;
+  height: 32px;
+  top: -4px;
+  left: -25px;
+}
+
+.navigation__item a {
+  transition: opacity ease 0.2s;
+}
+
+.navigation__item a:hover {
+  opacity: 0.7;
+}
+
+.main__button-section {
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-shadow: -10px 0 40px 0 #454f7e;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  padding: 24px 24px 32px 24px;
+}
+
+.container__navigation {
+  margin: 0 0 250px 0;
+}
+.contact-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.container__contact {
+  margin-bottom: 16px;
+}
+
+.container__ifno {
+  margin-bottom: 40px;
+}
+
+.container__header {
+  margin-bottom: 45px;
+}
+
+.contact_phone {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "TT Lakes bold";
+}
+
+.container__info {
+  margin-bottom: 40px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  gap: 30px;
+  margin: 0;
+}
+.navigation__item a {
+  text-decoration: none;
+  color: #1b1c21;
+  font-weight: 600;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-weight: 600;
+}
+.contact-info a {
+  display: block;
+  color: #1b1c21;
+  text-decoration: none;
+  font-style: normal;
+}
+
+.language-selector {
+  display: flex;
+  gap: 7px;
+}
+
+.lang__btn {
+  border: none;
+  background-color: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lang__btn:focus {
+  font-weight: normal;
+}
+
+@media (max-width: 1120px) {
+  .main__button-section {
+    overflow: scroll;
+    mask: linear-gradient(90deg, #fff 95%, transparent);
+  }
+  .main {
+    height: 90vh;
+  }
+}
+@media (min-width: 768px) {
+  .menu__tablet {
+    margin-right: 22px;
+  }
+  .menu-button__icon-burger {
+    position: relative;
+  }
+  .menu-button__icon-burger::after {
+    content: "";
+    background-color: #eaeaea;
+    border-radius: 1px;
+    position: absolute;
+    width: 2px;
+    height: 32px;
+    top: 4px;
+    right: -20px;
+  }
+  .main-title::before {
+    left: -24px;
+  }
+  .main-title,
+  .main__button-section {
+    margin-bottom: 32px;
+  }
+  .text__mobile {
+    display: none;
+  }
+  .text__tablet--display {
+    display: block;
+  }
+  .section-flex {
+    display: flex;
+    gap: 48px;
+  }
+}
+@media (min-width: 1120px) {
+  .main__title {
+    margin: 0;
+  }
+  .main-title::before {
+    left: -35px;
+  }
+  .desktop-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .desktop-button--display {
+    display: flex;
+    gap: 32px;
+  }
+  .main__button-section {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .section-flex {
+    gap: 36px;
+  }
+  .text__tablet--display {
+    display: none;
+  }
+  .text__desktop--display {
+    display: block;
+  }
+}
+
+/* внешние отступы элементов */
+.logo__img {
+  margin-right: 62px;
+}
+
+.main {
+  background-color: #f8f8f8;
+  height: 100vh;
+}
+
+.text__mobile,
+.text__tablet,
+.text__desktop {
+  letter-spacing: 0.2px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+.text__continue {
+  position: relative;
+  border: none;
+  background-color: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 20px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+.text__continue::before {
+  content: "";
+  background-image: url(../ic/icon-button-arrow.svg);
+  position: absolute;
+  width: 7.5px;
+  height: 10px;
+  top: 6px;
+  left: -20px;
+}
