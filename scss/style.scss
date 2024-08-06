@@ -13,6 +13,8 @@ html {
 button {
   padding: 0;
   font-family: "TT Lakes", sans-serif;
+  cursor: pointer;
+  border: none;
 }
 @font-face {
   font-family: "TT Lakes";
@@ -70,10 +72,9 @@ h3 {
 .header-button {
   position: relative;
   display: flex;
-  border: none;
   align-items: center;
   gap: 8px;
-  cursor: pointer;
+
   font-weight: 600;
   background-color: inherit;
 }
@@ -84,8 +85,6 @@ h3 {
   height: 40px;
   flex-shrink: 0;
   border-radius: 50%;
-  border: none;
-  cursor: pointer;
 }
 /* Кнопки в мейне, стилизация */
 .main-button {
@@ -97,7 +96,7 @@ h3 {
   border-radius: 5px;
   color: #7e7e82;
   border-color: #b8ffec;
-  cursor: pointer;
+
   background-color: inherit;
   border: 2px solid transparent;
 }
@@ -113,8 +112,8 @@ h3 {
 
 /* Контент кнопок */
 
-.menu-button__icon-close {
-  background-image: url(../ic/icon-close.svg);
+.menu-button__icon-exit {
+  background-image: url(../ic/icon-exit.svg);
   @extend %menu-button-position;
 }
 .menu-button__icon-burger {
@@ -181,16 +180,12 @@ h3 {
   display: flex;
 }
 
-.navigation__item a {
-  position: relative;
-}
-
 .main__title {
   margin-bottom: 24px;
 }
 
 .main-title::before,
-.navigation__item a:hover::before {
+.navigation__link:hover::before {
   content: "";
   display: block;
   background-color: #41f6d7;
@@ -199,14 +194,14 @@ h3 {
   width: 4px;
   height: 32px;
   top: -4px;
-  left: -25px;
+  left: -1px;
 }
 
-.navigation__item a {
-  transition: opacity ease 0.2s;
+.menu__logo {
+  margin-right: 62px;
 }
 
-.navigation__item a:hover {
+.navigation__link:hover {
   opacity: 0.7;
 }
 
@@ -216,6 +211,7 @@ h3 {
 }
 
 .container {
+  height: 100vh;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -228,7 +224,7 @@ h3 {
 }
 
 .container__navigation {
-  margin: 0 0 250px 0;
+  margin: 0;
 }
 .contact-buttons {
   display: flex;
@@ -262,13 +258,23 @@ h3 {
   flex-direction: column;
   list-style: none;
   padding: 0;
-  gap: 30px;
   margin: 0;
+  margin-inline: -24px;
 }
-.navigation__item a {
+
+.navigation__item {
+  height: 48px;
+}
+
+.navigation__link {
+  padding-inline: 24px;
   text-decoration: none;
   color: #1b1c21;
   font-weight: 600;
+  position: relative;
+  display: block;
+  transition: opacity ease 0.34s;
+  height: 100%;
 }
 
 .contact-info {
@@ -277,7 +283,8 @@ h3 {
   gap: 12px;
   font-weight: 600;
 }
-.contact-info a {
+.contact_mail,
+.contact_phone {
   display: block;
   color: #1b1c21;
   text-decoration: none;
@@ -290,14 +297,16 @@ h3 {
 }
 
 .lang__btn {
-  border: none;
   background-color: inherit;
   font-weight: 700;
-  cursor: pointer;
 }
 
 .lang__btn:focus {
   font-weight: normal;
+}
+
+.container-flx-bottom {
+  margin-top: auto;
 }
 
 @media (max-width: 1120px) {
@@ -377,9 +386,6 @@ h3 {
 }
 
 /* внешние отступы элементов */
-.logo__img {
-  margin-right: 62px;
-}
 
 .main {
   background-color: #f8f8f8;
