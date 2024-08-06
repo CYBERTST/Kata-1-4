@@ -69,22 +69,21 @@ h3 {
   gap: 16px;
   align-items: center;
 }
-.header-button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 
-  font-weight: 600;
-  background-color: inherit;
-}
 /* Кнопки в меню, стилизация */
 .menu-button {
+  position: relative;
+  display: flex;
+  transition: transform ease 0.3s;
+  background-color: inherit;
   background-color: #ff3e79;
   width: 40px;
   height: 40px;
-  flex-shrink: 0;
   border-radius: 50%;
+}
+
+.menu-button:hover {
+  transform: scale(1.2);
 }
 /* Кнопки в мейне, стилизация */
 .main-button {
@@ -112,7 +111,7 @@ h3 {
 
 /* Контент кнопок */
 
-.menu-button__icon-exit {
+.menu-button--icon-exit {
   background-image: url(../ic/icon-exit.svg);
   @extend %menu-button-position;
 }
