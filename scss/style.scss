@@ -192,7 +192,8 @@ h3 {
   position: absolute;
   width: 4px;
   height: 32px;
-  top: -4px;
+  top: 50%;
+  transform: translateY(-50%);
   left: -1px;
 }
 
@@ -271,7 +272,8 @@ h3 {
   color: #1b1c21;
   font-weight: 600;
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
   transition: opacity ease 0.34s;
   height: 100%;
 }
