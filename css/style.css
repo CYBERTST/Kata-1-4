@@ -181,16 +181,23 @@ h3 {
   font-style: normal;
 }
 
-.language-selector {
+.switch-language__label {
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: color 0.2s ease-in-out;
+}
+.switch-language__button {
+  appearance: none;
+  position: absolute;
+}
+.switch-language__button:checked + .switch-language__label {
+  color: #7e7e82;
+}
+
+.aside__switch-language {
+  font-weight: 600;
+  padding: 0;
+  list-style: none;
   display: flex;
   gap: 7px;
-}
-
-.lang__btn {
-  background-color: inherit;
-  font-weight: 700;
-}
-
-.lang__btn:focus {
-  font-weight: normal;
 }

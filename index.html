@@ -64,11 +64,59 @@
             <a class="contact__phone" href="tel:88008908900">8 800 890 8900</a>
           </address>
 
-          <div class="language-selector">
-            <button class="lang__btn">RU</button>
-            <button class="lang__btn">EN</button>
-            <button class="lang__btn">CH</button>
-          </div>
+          <ul class="aside__switch-language switch-language">
+            <li class="switch-language__item">
+              <input
+                class="switch-language__button"
+                aria-label="установлен русский язык"
+                checked
+                data-language="ru"
+                id="language--ru"
+                name="language"
+                type="radio"
+              />
+              <label
+                class="switch-language__label"
+                for="language--ru"
+                tabindex="0"
+                >ru</label
+              >
+            </li>
+
+            <li class="switch-language__item">
+              <input
+                class="switch-language__button"
+                aria-label="установлен английский язык"
+                data-language="en"
+                id="language--en"
+                name="language"
+                type="radio"
+              />
+              <label
+                class="switch-language__label"
+                for="language--en"
+                tabindex="0"
+                >en</label
+              >
+            </li>
+
+            <li class="switch-language__item">
+              <input
+                class="switch-language__button"
+                aria-label="установлен китайский язык"
+                data-language="ch"
+                id="language--ch"
+                name="language"
+                type="radio"
+              />
+              <label
+                class="switch-language__label"
+                for="language--ch"
+                tabindex="0"
+                >ch</label
+              >
+            </li>
+          </ul>
         </div>
       </div>
     </aside>
