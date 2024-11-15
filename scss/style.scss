@@ -162,21 +162,23 @@ h3 {
     align-items: center;
     transition: opacity ease 0.34s;
     height: 100%;
-  }
-  &__link:hover {
-    opacity: 0.7;
-  }
-  &__link:hover::before {
-    content: "";
-    display: block;
-    background-color: #41f6d7;
-    border-radius: 4px;
-    position: absolute;
-    width: 4px;
-    height: 32px;
-    top: 50%;
-    transform: translateY(-50%);
-    left: -1px;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:hover::before {
+      content: "";
+      display: block;
+      background-color: #41f6d7;
+      border-radius: 4px;
+      position: absolute;
+      width: 4px;
+      height: 32px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -1px;
+    }
   }
 }
 
